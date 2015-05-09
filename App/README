@@ -1,0 +1,64 @@
+Application
+=--------------------------------------------------------------------------------------------------=
+Purpose: Front end android application that is compatible with Android Ice Cream Sandwich (API 15).
+         This application allows the patient to ability to view their cough trends over various
+         scopes of times and also gives the patient suggestions based on their current cough trends
+         in relation to their pre treatment cough rates.
+
+Architecture
+=--------------------------------------------------------------------------------------------------=
+.java files
+    Java Logic that inflates different xml layouts and handles user interaction with the application
+
+.xml
+    drawable : Drawables to be used to draw into the activity screens
+    drawable-hdpi, mdpi, xhdpi, xxhdpi : Icons to be drawn on the activity screens
+    layout : Main activity screen layouts
+    menu : Menu items for MainActivity from the drop down.
+    values : Constant values like pixels, strings etc.
+    xml : Line xml formats for the chart.
+    AndroidManifest : Grants all permissions and indicates activities and which starts.
+
+Java File Descriptions
+=--------------------------------------------------------------------------------------------------=
+Activity files:
+    MainActivity : This file contains all the chart screen logic. Includes 4 tabs which scope
+                   to the different time frames and a chart for each tab with buttons under each
+                   chart to scope to previous periods of time. Also includes a message box for
+                   the suggestion based on the trend of the chart. Each tab is associated with
+                   a GraphFragment.
+    LoginActivity : This file contains all login screen logic. This includes logging in and
+                    authenticating the user through the server.
+    RegisterActivity : This file contains all the register screen logic. This includes registering
+                       the user through the server.
+
+    GraphFragment : This file contains the chart logic. This sets up the chart and also requests
+                    data from the backend to populate the chart with. This also handles the touch
+                    for the user to interact with the chart to see what points. Note this isn't
+                    an activity, but a Fragment that is associated with each tab in the
+                    MainActivity.
+
+Custom Classes:
+    GraphXLabelFormat : Custom class is a formatter for the labels at the bottom of the chart
+    SwipeViewPager : Custom Viewpager that enables/disables swipe
+    CoughDataPoint : Custom class to represent a cough Data Point, used by the Chart.
+
+Back End Classes:
+    MySQLLiteHelper : Extends SQLiteOpenHelper and is used to instantiate the phone's local SQL database
+    DBInterface : Interface for activities to make requests for data. Handles all Http requests
+                  and JSONParsing for return data.
+    DB : Interface to add, delete and update the phone's local SQL database
+    SessionManager : Interface to interact with shared preferences and persist login information.
+    JSONParser : Interface to Handle JSON Parsing of Http post and get requests.
+
+Activity Flow
+=--------------------------------------------------------------------------------------------------=
+    Starts at LoginActivity.
+
+    LoginActivity moves to RegisterActivity if the user presses the Register button.
+    Moves to the MainActivity if the user successfully logs in and is authenticated.
+
+    RegisterActivity moves back to LoginActivity once the user registers successfully or navigates
+    back.
+
+    MainActivity moves out to LoginActivity once user logs out.

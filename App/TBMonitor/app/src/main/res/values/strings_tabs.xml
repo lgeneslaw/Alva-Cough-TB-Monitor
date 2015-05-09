@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tab_days">DÍA</string>
+    <string name="tab_weeks">SEMANA</string>
+    <string name="tab_months">MES</string>
+    <string name="tab_all">AÑO</string>
+
+</resources>

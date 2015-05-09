@@ -1,0 +1,19 @@
+<resources>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">CORREO</string>
+    <string name="prompt_password">CONTRASEÑA</string>
+    <string name="prompt_password_repeat">REPITE CONTRASEÑA</string>
+    <string name="action_sign_in">INICIAR SESIÓN</string>
+    <string name="action_sign_in_short">INICIAR SESIÓN</string>
+    <string name="action_register">INSCRIBIRSE</string>
+
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+
+    <string name="error_registering">Registration error.</string>
+    <string name="error_registering_internet">Registration failed. Please check your wireless connection.</string>
+    <string name="error_registering_username_exists">Username already exists.</string>
+</resources>

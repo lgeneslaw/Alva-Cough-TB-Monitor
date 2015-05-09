@@ -1,0 +1,40 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/title_blue</item>
+        <item name="android:actionBarTabStyle">@style/MyActionBarTabs</item>
+        <item name="actionBarTabStyle">@style/MyActionBarTabs</item>
+    </style>
+
+    <!-- ActionBar tabs styles -->
+    <style name="MyActionBarTabs"
+        parent="@style/Widget.AppCompat.ActionBar.TabView">
+        <!-- tab indicator -->
+        <item name="android:background">@drawable/actionbar_tab_indicator</item>
+
+        <!-- Support library compatibility -->
+        <item name="background">@drawable/actionbar_tab_indicator</item>
+    </style>
+
+    <!-- Graph Colors  -->
+    <color name="cough_series_blue">#6FA0E3</color>
+    <color name="selected_line_white">#FFFFFF</color>
+    <color name="grid_lightblue">#DAE1EB</color>
+    <color name="domain_label_blue">#6FA0E3</color>
+    <color name="graph_background_lightblue">#C8D4E6</color>
+
+
+    <color name="title_blue">#6FA0E3</color>
+    <color name="sign_in_white">#FFFFFF</color>
+    <color name="background_blue">#C8D4E6</color>
+    <color name="register_button_grey">#9ba6b5</color>
+
+    <!-- message colors-->
+    <color name="improving_green">#00FF00</color>
+    <color name="declining_red">#FF0000</color>
+    <color name="loading_blue">#6FA0E3</color>
+
+
+</resources>

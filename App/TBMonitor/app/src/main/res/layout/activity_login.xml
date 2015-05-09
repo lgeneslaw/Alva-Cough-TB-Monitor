@@ -1,0 +1,104 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:gravity="center_horizontal"
+    android:orientation="vertical" android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background_gradient"
+    tools:context="com.paullcchang.tbmoniter.LoginActivity">
+
+    <!-- Login progress -->
+    <ProgressBar android:id="@+id/login_progress" style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp" android:visibility="gone" />
+
+    <ScrollView android:id="@+id/login_form" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout android:id="@+id/email_login_form" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/title_activity_login"
+                android:textColor="@color/title_blue"
+                android:id="@+id/loginTitleTextView"
+                android:layout_gravity="center_horizontal"
+                android:textStyle="bold"
+                android:textSize="48sp"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="18dp" />
+
+            <AutoCompleteTextView
+                android:id="@+id/emailEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_email"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@color/title_blue"
+                android:background="@color/sign_in_white"
+                android:alpha="0.6"
+                android:drawableLeft="@drawable/ic_action_email"
+                android:drawableStart="@drawable/ic_action_email"
+                android:drawablePadding="5dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginRight="18dp"
+                android:layout_marginBottom="6dp" />
+
+            <EditText android:id="@+id/passwordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_password"
+                android:imeActionLabel="@string/action_sign_in_short"
+                android:imeOptions="actionUnspecified"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@color/title_blue"
+                android:background="@color/sign_in_white"
+                android:alpha="0.6"
+                android:drawableLeft="@drawable/ic_action_secure"
+                android:drawableStart="@drawable/ic_action_secure"
+                android:drawablePadding="5dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp" />
+
+            <Button android:id="@+id/signInButton"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/action_sign_in"
+                android:textStyle="bold"
+                android:textColor="@color/sign_in_white"
+                android:background="@color/title_blue"
+                android:textSize="20sp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp" />
+
+            <Button android:id="@+id/registerButton"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/action_register"
+                android:textStyle="bold"
+                android:textColor="@color/sign_in_white"
+                android:background="@color/register_button_grey"
+                android:textSize="20sp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
+
+
+

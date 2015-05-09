@@ -1,0 +1,81 @@
+************************************************************************
+                                BACKEND
+                        Author - Luke Geneslaw
+************************************************************************
+
+1. Introduction
+2. Structure
+3. Database
+4. Web API
+
+************************************************************************
+                            1. Introduction
+************************************************************************
+    The backend lives on a hostmonster apache server. The server holds
+raw patient audio data, a web API, and a MySQL database. The server
+all of the processing of audio files and interactions with the database.
+
+************************************************************************
+                            2. Structure
+************************************************************************
+    The server can be accessed at http://skysip.org/p539. Here you will
+find the root directory with 2 folders: "php" and "patient_data."
+
+    The php folder contains the web API, with scripts for login and
+registration, requesting cough data, and posting patient audio files.
+
+    The patient_data folder holds a folder for each patient, and each
+patient folder holds the audio files they have uploaded. If an audio
+file exists in this folder, that means there is also a record in the
+database containing the cough count found in this file. See the
+Database section for more information.
+
+************************************************************************
+                            3. Database
+************************************************************************
+    The database (called skysipor_p538) is a MySQL database that lives
+on the server. It has a basic credentials table which is used for login
+and registration. This table holds an ID, email, and hashed password for
+each patient.
+
+    The database also has a table called P0. This is the template of a
+patient cough data table. It has 2 columns, DATE_TIME and COUGH_COUNT.
+P0 is empty, it is simply used as a blueprint to construct cough tables
+for actual patients. Each patient has a cough table, called P<ID>.
+Each record in this table represents one hour of cough data. The
+DATE_TIME field describes the time that the hour of data started, and
+the COUGH_COUNT field describes the number of coughs in that hour.
+
+************************************************************************
+                            4. Web API
+************************************************************************
+    The web API lives at http://skysip.org/p539/php. It has the
+following files:
+
+- db_config.php
+    Defines database connection constants
+- db_table_constants.php
+    Defines database naming constants
+- db_connect.php
+    Class for connecting to the database
+- login.php
+    Responds to an HTTP GET request with a JSON object containing login
+    success/failure. Takes an email and password as parameters.
+- register.php
+    Responds to a registration attempt with a JSON object containing
+    success/failure and a message. If the registration is successful,
+    the new patient is assigned an ID and a new table is created in the
+    database to store their cough data.
+- db_get_patient_cough_data.php
+    Responds to an HTTP GET request with JSON data containing
+    DATE_TIMEs and COUGH_COUNTs for one patient. The caller specifies
+    patient's email and can also specify a range of dates/times for
+    different chunks of cough data.
+- post_wav.php
+    Responds to an HTTP POST request with a JSON object containing
+    success/failure and a message. This file allows the client to post
+    a patient's cough recording to the server. When the server receives
+    the file for patient with ID # at date_time YYYY-MM-DD_HH:MM:SS, it
+    writes it to /p539/patient_data/audio/p#_YYYY-MM-DD_HH:MM:SS.wav.
+    It then detects the number of coughs in the file and adds a record
+    to the patient's cough table.

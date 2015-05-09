@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TB Monitor</string>
+    <string name="title_activity_login">TB Monitor</string>
+    <string name="title_activity_register">INSCRIBIRSE</string>
+
+    <string name="action_settings">Configuraciónes</string>
+    <string name="action_logout">Cerrar sesión</string>
+    <string name="action_refresh">Actualizar</string>
+
+
+
+
+</resources>

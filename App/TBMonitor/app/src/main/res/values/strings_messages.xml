@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Messages -->
+    <string name="message_loading">Cargando datos..</string>
+    <string name="message_http_error">Se ha producido un error al cargar los datos.</string>
+    <string name="message_improving">Está mejorando.</string>
+    <string name="message_declining">Debe ver a un médico.</string>
+
+
+</resources>
